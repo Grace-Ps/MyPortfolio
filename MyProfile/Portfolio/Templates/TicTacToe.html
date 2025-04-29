@@ -12,7 +12,7 @@
     <h1>Tic Tac Toe</h1>
 
     <div id="startMenu" class="startMenu">
-        <h2>Choose Difficulty</h2>
+<!--        <h2>Choose Difficulty</h2>-->
         <div class="difficulty-options">
             <button class="difficulty-button" data-level="easy">Easy</button>
             <button class="difficulty-button" data-level="medium">Medium</button>
@@ -35,5 +35,11 @@
 
     <div id="congrats" class="congrats hidden"></div>
     <div id="Messages" class="Messages hidden"></div>
+    <div class="isotope-overlay BackRight">
+        <a href="{% url 'game_page' game_id=0 %}">Games</a>
+    </div><!-- /.isotope-overlay -->
+    <div class="isotope-overlay BackHome">
+        <a href="{% url 'home'  %}">Home</a>
+    </div><!-- /.isotope-overlay -->
 </body>
 </html>

@@ -136,3 +136,15 @@
      background: #94b7aa;
     }
 
+.BackRight{
+    position: fixed;
+    bottom: 5%;
+    left: 90%;
+
+}
+
+.BackHome {
+    position: fixed;
+    bottom: 5%;
+    right: 90%;
+}

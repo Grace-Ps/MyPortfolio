@@ -49,3 +49,16 @@ body {
       box-shadow: 0 10px 20px rgba(0,0,0,0.2);
       background: #e3f2fd;
     }
+
+   .BackRight{
+    position: fixed;
+    bottom: 5%;
+    left: 90%;
+
+    }
+
+    .BackHome {
+        position: fixed;
+        bottom: 5%;
+        right: 90%;
+    }
