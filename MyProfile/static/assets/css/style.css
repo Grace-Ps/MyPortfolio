@@ -564,6 +564,7 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     text-transform: capitalize;
     color: #636a82;
     font-size: 16px;
+    padding: 15px;
 }
 .single-profile.profile-no-border{border-right:transparent;}
 .profile-border {

@@ -9,3 +9,8 @@ def home(request):
     return HttpResponse(temp.render())
 
 #MyPortfolio
+
+def game_page(request, game_id):
+    Result = {0:'game_page.html',1:'TicTacToe.html'}
+    return render(request, Result[game_id], {'game_id': game_id})
+

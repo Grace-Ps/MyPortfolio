@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'assets/css/GameHub.css' %}">
+    <title>Game Hub</title>
+</head>
+<body>
+
+  <header>🎮 Welcome to Game Hub 🎮</header>
+
+  <div class="game-grid">
+    <a href="{% url 'game_page' game_id=1 %}" class="game-card">Tic Tac Toe</a>
+    <a href="{% url 'game_page' game_id=2 %}" class="game-card">Memory Card Flip Game</a>
+    <a href="{% url 'game_page' game_id=3 %}" class="game-card">Typing Speed Test</a>
+  </div>
+
+</body>
+</html>

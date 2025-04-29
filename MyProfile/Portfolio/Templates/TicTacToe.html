@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="{% static 'assets/css/tic_tac_toe.css' %}">
+    <script defer src="{% static 'assets/js/tic_tac_toe.js' %}"></script>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+
+    <div id="startMenu" class="startMenu">
+        <h2>Choose Difficulty</h2>
+        <div class="difficulty-options">
+            <button class="difficulty-button" data-level="easy">Easy</button>
+            <button class="difficulty-button" data-level="medium">Medium</button>
+            <button class="difficulty-button" data-level="hard">Hard</button>
+        </div>
+        <div class="game-controls">
+            <button id="startBtn" class="start-button">Start</button>
+            <button id="resetBtn" class="start-button reset-button">Reset</button>
+        </div>
+    </div>
+
+    <div id="PlayBoard" class="hidden">
+        <div class="board">
+            {% for i in "012345678" %}
+                <div class="cell" data-index="{{ forloop.counter0 }}"></div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div id="congrats" class="congrats hidden"></div>
+    <div id="Messages" class="Messages hidden"></div>
+</body>
+</html>
