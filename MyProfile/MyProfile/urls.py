@@ -20,5 +20,6 @@ from django.urls import path, include
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('Portfolio.urls')),
+    path('', include('opencv_examples.urls')),
 
 ]

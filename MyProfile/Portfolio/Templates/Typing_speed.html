@@ -20,6 +20,12 @@
         <button class="start-button" id="startGame">Start Game</button>
     </div>
       <div id="Messages" class="congrats hidden"></div>
+     <div class="isotope-overlay BackRight">
+        <a href="{% url 'game_page' game_id=0 %}">Games</a>
+    </div><!-- /.isotope-overlay -->
+    <div class="isotope-overlay BackHome">
+        <a href="{% url 'home'  %}">Home</a>
+    </div><!-- /.isotope-overlay -->
     <script src="{% static 'assets/js/typing_speed.js' %}"></script>
 </body>
 </html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="{% static 'assets/css/common_styles.css' %}">
+</head>
+<body>
+    <div class="qr-container">
+        <h1>QR Code Scanner</h1>
+        <form id="qrForm" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" id="qrInput" name="qr_code" accept="image/*" required>
+            <button type="submit">Upload</button>
+        </form>
+        <div id="qrPreview">
+            <h3>Uploaded QR Code:</h3>
+            <img id="qrImage" src="#" alt="QR Code Preview" style="display: none; max-width: 300px;">
+        </div>
+        <div id="qrResult">
+            <h3>Decoded Result:</h3>
+            <p id="resultText">No result yet.</p>
+        </div>
+    </div>
+    <script>
+        const qrInput = document.getElementById('qrInput');
+        const qrImage = document.getElementById('qrImage');
+        const resultText = document.getElementById('resultText');
+        const qrForm = document.getElementById('qrForm');
+
+        qrInput.addEventListener('change', () => {
+            const file = qrInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    qrImage.src = e.target.result;
+                    qrImage.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        qrForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(qrForm);
+            const response = await fetch('', {
+                method: 'POST',
+                body: formData,
+            });
+            const data = await response.json();
+            resultText.textContent = data.result || 'Failed to decode QR code.';
+        });
+    </script>
+</body>
+</html>
