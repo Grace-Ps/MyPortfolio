@@ -51,9 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const endGame = () => {
         wordInput.disabled = true;
         startGameButton.disabled = false;
-        alert(`Game Over! Your score is ${score}`);
+        showMessages(`Game Over! Your score is ${score}`);
     };
 
     wordInput.addEventListener("input", checkInput);
     startGameButton.addEventListener("click", startGame);
 });
+
+  const showMessages = (result) => {
+        Messages.textContent = result;
+        Messages.style.backgroundColor = "#46c746";
+        Messages.classList.remove('hidden');
+        setTimeout(() => {
+            Messages.classList.add('hidden');
+//            resetGame();
+        }, 3000);
+    };

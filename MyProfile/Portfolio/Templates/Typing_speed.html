@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Speed Game</title>
+    <link rel="stylesheet" href="{% static 'assets/css/common_styles.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/typing_speed.css' %}">
 </head>
 <body>
@@ -18,6 +19,7 @@
         </div>
         <button class="start-button" id="startGame">Start Game</button>
     </div>
+      <div id="Messages" class="congrats hidden"></div>
     <script src="{% static 'assets/js/typing_speed.js' %}"></script>
 </body>
 </html>
