@@ -1,0 +1,49 @@
+.BackRight{
+    position: fixed;
+    bottom: 5%;
+    left: 90%;
+
+}
+
+.BackHome {
+    position: fixed;
+    bottom: 5%;
+    right: 90%;
+}
+
+.hidden {
+  display: none;
+}
+
+.congrats {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #4CAF50;
+  color: white;
+  padding: 30px 50px;
+  font-size: 32px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: pop 1s ease forwards;
+  z-index: 1000;
+}
+
+.Messages{
+  position: fixed;
+  top: 10%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  background: #4CAF50;
+  color: white;
+  padding: 30px 50px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  animation: pop 1s ease forwards;
+  z-index: 1000;
+}
+

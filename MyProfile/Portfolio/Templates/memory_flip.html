@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Memory Flip Game</title>
+    <link rel="stylesheet" href="{% static 'assets/css/memory_flip.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/common_styles.css' %}">
+    <script defer src="{% static 'assets/js/memory_flip.js' %}"></script>
+</head>
+<body>
+  <div class="MainDiv">
+      <h1>🧠 Memory Flip Game</h1>
+    <div class="grid" id="gameGrid"></div></div>
+  <div id="congrats" class="congrats hidden"></div>
+    <div id="Messages" class="Messages hidden"></div>
+    <div class="isotope-overlay BackRight">
+        <a href="{% url 'game_page' game_id=0 %}">Games</a>
+    </div><!-- /.isotope-overlay -->
+    <div class="isotope-overlay BackHome">
+        <a href="{% url 'home'  %}">Home</a>
+    </div><!-- /.isotope-overlay -->
+</body>
+</html>
