@@ -6,36 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Scanner</title>
     <link rel="stylesheet" href="{% static 'assets/css/common_styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/QR_code.css' %}">
 </head>
 <body class="QRBody">
 <h1 class="header">QR Code Scanner</h1>
 <div class="qr-container">
-        <form id="qrForm" method="POST" enctype="multipart/form-data">
-            {% csrf_token %}
-            <label for="qr_code" class="drop-container" id="dropcontainer">
+    <form id="qrForm" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="qr_code" class="drop-container" id="dropcontainer">
 
-              <span class="drop-title">Drop files here</span>
-              or
-<!--                <input type="file" id="images" accept="image/*" required>-->
-                <input type="file" id="qrInput" name="qr_code" accept="image/*" required>
-                <button type="submit">Decode</button>
-                <div>
+            <span class="drop-title">Drop files here</span>
+            or
+            <!--                <input type="file" id="images" accept="image/*" required>-->
+            <input type="file" id="qrInput" name="qr_code" accept="image/*" required>
+            <button type="submit">Decode</button>
+            <div>
 
-                    <img id="qrImage" src="#" alt="QR Code Preview" style="display: none; max-width: 300px;margin-left: 26vw; margin-top: -8vw;}">
-                </div>
-            </label>
-        </form>
+                <img id="qrImage" src="#" alt="QR Code Preview"
+                     style="display: none; max-width: 300px;margin-left:19vw; margin-top: -8vw;}">
+            </div>
+        </label>
         <div class="CenterContainer">
-
-
-            <div id="qrResult">
+            <div id="qrResult" class="hidden">
                 <h3>Decoded Result:</h3>
                 <p id="resultText">No result yet.</p>
             </div>
         </div>
-    </div>
-    <script>
+    </form>
+</div>
+<script>
         const qrInput = document.getElementById('qrInput');
+        const qrResult = document.getElementById('qrResult');
         const qrImage = document.getElementById('qrImage');
         const resultText = document.getElementById('resultText');
         const qrForm = document.getElementById('qrForm');
@@ -61,6 +62,7 @@
             });
             const data = await response.json();
             resultText.textContent = data.result || 'Failed to decode QR code.';
+             qrResult.classList.remove("hidden")
         });
 
 
@@ -86,6 +88,7 @@
             fileInput.files = e.dataTransfer.files
           })
 
-    </script>
+
+</script>
 </body>
 </html>

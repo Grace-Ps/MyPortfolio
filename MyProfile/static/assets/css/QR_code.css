@@ -1,0 +1,125 @@
+/*body {
+    margin: 0;
+    padding: 0;
+    background: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}*/
+
+/* Header */
+.header {
+    margin-top: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #5e2ced;
+    text-align: center;
+}
+
+/* QR container card */
+.qr-container {
+    background: #ffffff;
+    padding: 30px 40px;
+    margin-top: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+}
+
+/* Dropzone styling */
+.drop-container {
+    border: 2px dashed #aaa;
+    border-radius: 10px;
+    padding: 20px;
+    cursor: pointer;
+    background: #f9f9f9;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width:90%
+}
+
+.drop-container:hover {
+    background: #f0f0f0;
+    border-color: #666;
+}
+
+.drop-container.drag-active {
+    background: #e0e0e0;
+    border-color: #444;
+}
+
+.drop-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #555;
+}
+
+
+
+::file-selector-button {
+    border: 1px solid #4CAF50;
+    padding: 5px 15px;
+    border-radius: 6px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #45a049;
+    transform: scale(1.03);
+}
+
+/* QR image preview */
+#qrImage {
+    max-width: 200px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Result box */
+#qrResult {
+    margin-top: 30px;
+    text-align: center;
+}
+
+#resultText {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .qr-container {
+        padding: 20px;
+    }
+
+    .header {
+        font-size: 1.5rem;
+    }
+}
